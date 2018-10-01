@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-floating-labels",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/floating.labels.min.js",
   "directories": {
