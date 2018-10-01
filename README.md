@@ -7,7 +7,7 @@ Add to the package.json file the below repository
   "dependencies": {
           "bootstrap": "^4.1.1",
           "jquery": "^3.3.1",
-          "bootstrap-floating-labels": "^1.0.0"          
+          "bootstrap-floating-labels": "^1.0.1"          
       }
 ```
 
