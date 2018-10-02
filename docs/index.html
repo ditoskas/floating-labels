@@ -120,6 +120,7 @@
                         <li>data-floating-label-class: Default class that will be used on the label</li>
                         <li>data-floating-label-on-class: Default class that will be used on the label when is floated</li>
                         <li>data-floating-input-class: Default class that will be used on the input field</li>
+                        <li>data-animation-duration: Duration of animation</li>
                     </ul>
                     <pre class="language-html"><code>
 &lt;div class="form-group floating-control-group" data-floating-label-class="alternative-class">
@@ -130,7 +131,7 @@
     &lt;label for="txtFloatingPassword">Password&lt;/label>
     &lt;input type="password" class="form-control" id="txtFloatingPassword" placeholder="Enter Password">
 &lt;/div>
-&lt;div class="form-group floating-control-group" data-floating-input-class="alternative-input-class">
+&lt;div class="form-group floating-control-group" data-animation-duration='fast' data-floating-input-class="alternative-input-class">
     &lt;label for="txtFloatingComments">Comments&lt;/label>
     &lt;textarea class="form-control" id="txtFloatingComments" rows="3">&lt;/textarea>
 &lt;/div>
@@ -142,6 +143,7 @@ var options = {
     floatingLabelClass: 'alternative-floating-label',
     floatingLabelOnClass: 'alternative-floating-label-on',
     floatingInputClass: 'alternative-floating-input'
+    animationDuration: 'fast'
 };
 $('.form-group').floatingLabel(options);
                     </code></pre>
@@ -158,12 +160,13 @@ $('.form-group').floatingLabel(options);
     </footer><!--//footer-->
 
     <!-- Main Javascript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js" crossorigin="anonymous"></script>
-    <script src="assets/floating.labels.min.js" ></script>
+    <!--<script src="assets/floating.labels.min.js" ></script>-->
+    <script src="../floating.labels.js" ></script>
 </body>
 </html> 
 

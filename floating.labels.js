@@ -34,14 +34,30 @@
         this.$label.on('click',function(){that.$input.focus();});
         this.$input.on('focus',function () {
             that.$label.removeClass(that.options.floatingLabelClass).addClass(that.options.floatingLabelOnClass);
-            that.$label.css('top', '-' + (that.positionData.top + that.positionData.top) + 'px');
-            that.$label.css('left', 0);
+            if(typeof that.$label.animate === 'function'){
+                that.$label.animate({
+                    top:'-' + (that.positionData.top + that.positionData.top) + 'px',
+                    left: 0
+                },that.options.animationDuration);
+            }
+            else {
+                that.$label.css('top', '-' + (that.positionData.top + that.positionData.top) + 'px');
+                that.$label.css('left', 0);
+            }
         });
         this.$input.focusout(function () {
             if (that.$input.val().trim() === ''){
                 that.$label.removeClass(that.options.floatingLabelOnClass).addClass(that.options.floatingLabelClass);
-                that.$label.css('top', that.positionData.top + 'px');
-                that.$label.css('left', that.positionData.left + 'px');
+                if(typeof that.$label.animate === 'function'){
+                    that.$label.animate({
+                        top: that.positionData.top + 'px',
+                        left: that.positionData.left + 'px'
+                    },that.options.animationDuration);
+                }
+                else {
+                    that.$label.css('top', that.positionData.top + 'px');
+                    that.$label.css('left', that.positionData.left + 'px');
+                }
             }
         });
     };
@@ -50,7 +66,8 @@
         return {
             floatingLabelClass: this.$element.attr('data-floating-label-class') || $.fn.floatingLabel.defaults.floatingLabelClass,
             floatingLabelOnClass: this.$element.attr('data-floating-label-on-class') || $.fn.floatingLabel.defaults.floatingLabelOnClass,
-            floatingInputClass: this.$element.attr('data-floating-input-class') || $.fn.floatingLabel.defaults.floatingInputClass
+            floatingInputClass: this.$element.attr('data-floating-input-class') || $.fn.floatingLabel.defaults.floatingInputClass,
+            animationDuration: this.$element.attr('data-animation-duration') || $.fn.floatingLabel.defaults.floatingInputClass
         };
     };
 
@@ -66,7 +83,8 @@
     $.fn.floatingLabel.defaults = {
         floatingLabelClass: 'floating-label',
         floatingLabelOnClass: 'floating-label-on',
-        floatingInputClass: 'floating-input'
+        floatingInputClass: 'floating-input',
+        animationDuration: 'fast',
     };
 
     $(function() {
