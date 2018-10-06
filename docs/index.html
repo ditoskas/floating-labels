@@ -120,7 +120,6 @@
                         <li>data-floating-label-class: Default class that will be used on the label</li>
                         <li>data-floating-label-on-class: Default class that will be used on the label when is floated</li>
                         <li>data-floating-input-class: Default class that will be used on the input field</li>
-                        <li>data-animation-duration: Duration of animation</li>
                     </ul>
                     <pre class="language-html"><code>
 &lt;div class="form-group floating-control-group" data-floating-label-class="alternative-class">
@@ -131,7 +130,7 @@
     &lt;label for="txtFloatingPassword">Password&lt;/label>
     &lt;input type="password" class="form-control" id="txtFloatingPassword" placeholder="Enter Password">
 &lt;/div>
-&lt;div class="form-group floating-control-group" data-animation-duration='fast' data-floating-input-class="alternative-input-class">
+&lt;div class="form-group floating-control-group" data-floating-input-class="alternative-input-class">
     &lt;label for="txtFloatingComments">Comments&lt;/label>
     &lt;textarea class="form-control" id="txtFloatingComments" rows="3">&lt;/textarea>
 &lt;/div>
@@ -143,7 +142,6 @@ var options = {
     floatingLabelClass: 'alternative-floating-label',
     floatingLabelOnClass: 'alternative-floating-label-on',
     floatingInputClass: 'alternative-floating-input'
-    animationDuration: 'fast'
 };
 $('.form-group').floatingLabel(options);
                     </code></pre>

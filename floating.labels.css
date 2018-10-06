@@ -10,6 +10,12 @@
 .floating-label-on {
     font-size: 0.75rem;
     color: #007bff;
+    transform: translate3d(0, -100%, 0);
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
 }
 
 .floating-input {
