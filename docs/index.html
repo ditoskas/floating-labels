@@ -120,6 +120,7 @@
                         <li>data-floating-label-class: Default class that will be used on the label</li>
                         <li>data-floating-label-on-class: Default class that will be used on the label when is floated</li>
                         <li>data-floating-input-class: Default class that will be used on the input field</li>
+                        <li>data-floating-style: Default style class that will be used for coloring</li>
                     </ul>
                     <pre class="language-html"><code>
 &lt;div class="form-group floating-control-group" data-floating-label-class="alternative-class">
@@ -141,7 +142,8 @@
 var options = {
     floatingLabelClass: 'alternative-floating-label',
     floatingLabelOnClass: 'alternative-floating-label-on',
-    floatingInputClass: 'alternative-floating-input'
+    floatingInputClass: 'alternative-floating-input',
+    floatingStyle: 'primary'
 };
 $('.form-group').floatingLabel(options);
                     </code></pre>
