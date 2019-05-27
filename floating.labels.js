@@ -18,46 +18,30 @@
         this.$input = this.$element.find('input, textarea');
 
         this.options   = $.extend({}, this.getOptions(), options);
-
-        this.$element.css('position','relative');
+        
         this.$label.addClass(this.options.floatingLabelClass);
         this.$input.addClass(this.options.floatingInputClass);
         this.$input.attr('placeholder','');
 
-        var paddingInfo = {
-            default: {top: 7, left: 14},
-            lg: {top: 13, left: 18},
-            sm: {top: 5, left: 10},
-        };
-
-        this.$label.css('position', 'absolute');
-        this.$label.css('top', '0px');
-        this.$label.css('left', '0px');
-        this.positionData = paddingInfo.default;
         if (this.$input.hasClass('form-control-lg')){
-            this.positionData = paddingInfo.lg;
+            this.$label.addClass('fl-lg');
         }
         else if (this.$input.hasClass('form-control-sm')){
-            this.positionData = paddingInfo.sm;
+            this.$label.addClass('fl-sm');
         }
 
         var that = this;
         this.$label.on('click',function(){that.$input.focus();});
         this.$input.on('focus',function () {
-            that.$label.removeClass(that.options.floatingLabelClass)
-                .addClass(that.options.floatingLabelOnClass)
+            that.$label.addClass(that.options.floatingLabelOnClass)
                 .addClass('floating-label-' + that.options.floatingStyle);
-            that.$label.css('padding-left', '0px');
             that.$input.addClass('floating-input-' + that.options.floatingStyle);
         });
         this.$input.focusout(function () {
             if (that.$input.val().trim() === ''){
                 that.$input.removeClass('floating-input-' + that.options.floatingStyle);
                 that.$label.removeClass(that.options.floatingLabelOnClass)
-                    .removeClass('floating-label-' + that.options.floatingStyle)
-                    .addClass(that.options.floatingLabelClass);
-                that.$label.css('padding-top', that.positionData.top + 'px');
-                that.$label.css('padding-left', that.positionData.left + 'px');
+                    .removeClass('floating-label-' + that.options.floatingStyle);
             }
         });
     };
