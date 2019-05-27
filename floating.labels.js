@@ -44,6 +44,10 @@
                     .removeClass('floating-label-' + that.options.floatingStyle);
             }
         });
+
+        if (this.$input.val().trim() !== ''){
+            this.$input.trigger('focus');
+        }
     };
 
     FloatingLabel.prototype.getOptions = function() {
@@ -70,8 +74,4 @@
         floatingInputClass: 'floating-input',
         floatingStyle: 'primary'
     };
-
-    $(function() {
-        $('.floating-control-group').floatingLabel();
-    })
 }));
